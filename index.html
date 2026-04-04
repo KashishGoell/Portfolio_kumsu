@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══ GLOBAL VIDEO BACKGROUND ═══ -->
+  <div id="global-video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260217_030345_246c0224-10a4-422c-b324-070b7c0eceda.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <!-- Dim/undim the video: change opacity (0=none, 0.8=dark) or display:none to remove -->
+  <div id="global-video-overlay" style="display:none"></div>
+
+  <!-- ═══ CUSTOM CURSOR ═══ -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span id="nav-logo"></span>
+    </div>
+    <div class="nav-links">
+      <a href="#about"    class="nav-link">About    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <a href="#projects" class="nav-link">Projects <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <a href="#skills"   class="nav-link">Skills   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <a href="#resume"   class="nav-link">Resume   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <a href="#contact"  class="nav-link">Contact  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+    </div>
+    <div class="nav-cta">
+      <button class="nav-cta-inner" id="nav-cta-text"></button>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span id="hero-badge-text"></span>
+      </div>
+      <h1 class="hero-h1" id="hero-heading"></h1>
+      <p  class="hero-sub" id="hero-subtitle"></p>
+      <div class="hero-cta">
+        <a class="hero-cta-inner" id="hero-cta"></a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <!--
+    TO ADD YOUR PHOTO:
+    1. Put your photo file inside the assets/ folder (e.g. assets/photo.jpg)
+    2. Open data.js and set:  photo: "assets/photo.jpg"
+    That's it — the site will show it automatically.
+  -->
+  <section id="about">
+    <div class="noise-bg"></div>
+    <div class="orb orb-cyan" style="width:500px;height:500px;top:-100px;right:-100px;opacity:.5"></div>
+    <div class="about-grid">
+      <div class="reveal-left">
+        <div class="about-image-wrap">
+          <img    id="about-photo"       class="about-img"         src="" alt="Profile" style="display:none" />
+          <div    id="about-placeholder" class="about-img-placeholder"></div>
+          <div class="about-accent-box">
+            <span id="about-accent-num"   class="about-accent-num">2+</span>
+            <span class="about-accent-label">Years Exp</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="section-label">A Little About Me</div>
+        <h2 class="section-h2">My Story</h2>
+        <div class="about-quote" id="about-quote"></div>
+        <div id="about-bio"></div>
+        <div class="about-stats" id="about-stats"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROJECTS ═══ -->
+  <!--
+    TO ADD A PROJECT:
+    Open data.js → find the projects: [ ] array → copy one object and paste it.
+    TO ADD A PROJECT IMAGE:
+    Put the image in assets/projects/ and set image: "assets/projects/yourfile.png"
+    TO ADD LINKS:
+    Set liveUrl: "https://..." and/or githubUrl: "https://..."
+  -->
+  <section id="projects">
+    <div class="noise-bg"></div>
+    <div class="orb orb-purple" style="width:600px;height:600px;bottom:-200px;left:-200px;opacity:.4"></div>
+    <div class="projects-header reveal">
+      <div>
+        <div class="section-label">Featured Work</div>
+        <h2 class="section-h2" style="margin-bottom:0">Selected Projects</h2>
+      </div>
+    </div>
+    <div class="project-grid" id="project-grid"></div>
+  </section>
+
+  <!-- ═══ SKILLS ═══ -->
+  <section id="skills">
+    <div class="noise-bg"></div>
+    <div class="reveal">
+      <div class="section-label">Expertise</div>
+      <h2 class="section-h2">Skills &amp; Technologies</h2>
+    </div>
+    <div class="skills-grid" id="skills-grid"></div>
+  </section>
+
+  <!-- ═══ ROLES ═══ -->
+  <section id="roles">
+    <div class="noise-bg"></div>
+    <div class="orb orb-cyan" style="width:400px;height:400px;top:50%;right:-100px;opacity:.4"></div>
+    <div class="reveal">
+      <div class="section-label">Opportunities</div>
+      <h2 class="section-h2">Roles I'm Interested In</h2>
+    </div>
+    <div class="roles-grid" id="roles-grid"></div>
+  </section>
+
+  <!-- ═══ RESUME ═══ -->
+  <section id="resume">
+    <div class="noise-bg"></div>
+    <div class="reveal">
+      <div class="section-label">Background</div>
+      <h2 class="section-h2">Resume</h2>
+    </div>
+    <div class="resume-grid">
+      <div class="reveal-left">
+        <div class="timeline-title">Experience</div>
+        <div id="timeline-experience"></div>
+      </div>
+      <div class="reveal-right">
+        <div class="timeline-title">Education</div>
+        <div id="timeline-education"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact">
+    <div class="noise-bg"></div>
+    <div class="orb orb-purple" style="width:500px;height:500px;bottom:-100px;right:-100px;opacity:.35"></div>
+    <div class="reveal" style="margin-bottom:60px">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-h2">Let's Work Together</h2>
+      <p class="section-sub">I'm always open to new projects and opportunities. Feel free to reach out.</p>
+    </div>
+    <div class="contact-inner">
+      <div class="contact-info reveal-left">
+        <div class="contact-detail">
+          <span class="contact-detail-label">Email</span>
+          <a id="contact-email" class="contact-detail-val contact-link"></a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Location</span>
+          <span id="contact-location" class="contact-detail-val"></span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Status</span>
+          <span id="contact-status" class="contact-detail-val contact-status"></span>
+        </div>
+        <div id="contact-socials" class="contact-socials"></div>
+      </div>
+      <form class="contact-form reveal-right" id="contact-form">
+        <div class="form-group">
+          <label class="form-label">Name</label>
+          <input class="form-input" type="text" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn" id="submit-btn">
+          Send Message <span class="btn-arrow">→</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <span id="footer-left"></span>
+    <span id="footer-right"></span>
+  </footer>
+
+  <!-- data.js MUST load before main.js -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
