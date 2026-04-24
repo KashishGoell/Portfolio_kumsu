@@ -43,6 +43,16 @@ const PORTFOLIO = {
   // ── PROJECTS ─────────────────────────────────────────────────
   projects: [
     {
+      title:     "Standup-AI",
+  desc:      "An intelligent developer activity tracker that automatically generates daily standup reports by monitoring coding behavior, commits, file changes, and workflows in real-time using AI.",
+  image:     "",
+  imageLabel:"Standup-AI",
+  imageBg:   "linear-gradient(135deg, #0a0f2a, #1a7e62)",
+  tags:      ["AI Automation", "Developer Tools", "Python", "LLM"],
+  liveUrl:   "https://drive.google.com/file/d/1cAIFK0R8vs-SChCztNkFgJuH0D_POpm2/view?usp=sharing",
+  githubUrl: "https://github.com/KashishGoell/Standup-AI",
+},
+    {
       title:     "Cognition Arena",
       desc:      "A competitive arena where multiple AI models battle against each other, enabling benchmarking, comparison, and evaluation of model intelligence in real-time.",
       image:     "",
